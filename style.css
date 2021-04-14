@@ -15,7 +15,7 @@ main{
     align-items: center;
 }
 
-.coinGeneratedBox {
+#coinGeneratedBox {
     width: 100px;
     height: 100px;
     border: 2px solid black;
@@ -24,3 +24,15 @@ main{
 /* #coinGenerateBtn:hover{
 
 } */
+
+#delieThePenguin{
+    /* display: flex; */
+    width: 200px;
+    height: 200px;
+}
+
+.delieImg{
+    position:relative;
+    width:100%;
+    height:100%;
+}
