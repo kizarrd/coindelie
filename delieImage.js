@@ -1,4 +1,4 @@
-const delie = document.getElementById("delieThePenguin");
+const delieBody = document.getElementById("delieBody");
 
 const IMG_NUMBER = 0;
 
@@ -8,7 +8,7 @@ function getImage(imgNumber){
     img.src = `assets/penguin_cropped.png`;
     img.classList.add("delieImg"); 
     // id list도 할 수 있으려나? 그러면 여러 종류의 delie image마다 각각 id붙여주면 되는데
-    delie.appendChild(img);
+    delieBody.appendChild(img);
 }
 
 function init(){
