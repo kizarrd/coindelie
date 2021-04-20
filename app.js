@@ -27,6 +27,28 @@ function giveRandomCoin(){
     coinBox.innerHTML = pickACoin(coinList);
 }
 
+const delieBodyEClosed = document.querySelector(".delieImgEyesClosed");
+const thoughtBalloon = document.getElementById("thoughtBalloon");
+const thoughtBalloonImg = document.querySelector(".thoughtBalloonImg");
+
+function getThoughtBalloonImage(){
+    // if(thoughtBalloon.childNodes[0]){
+        //     thoughtBalloon.removeChild(thoughtBalloon.childNodes[0]);
+        // }
+    setTimeout(()=> {
+        thoughtBalloonImg.style.display = "none"; 
+        const thoughtBalloonMakingImg = new Image();
+        thoughtBalloonMakingImg.src = `assets/thought_balloon_01.gif`;
+        thoughtBalloonMakingImg.classList.add("thoughtBalloonGeneratingImg"); 
+        thoughtBalloon.appendChild(thoughtBalloonMakingImg);
+    }, 0);
+    
+    setTimeout(()=> {
+        thoughtBalloonImg.style.display = "flex";
+        thoughtBalloon.removeChild(document.querySelector(".thoughtBalloonGeneratingImg"));
+    }, 1500);
+}
+
 function handleCoinBtnClick(){
     
     if(localStorage.num_picks_left <= 0){
@@ -38,7 +60,7 @@ function handleCoinBtnClick(){
         localStorage.num_picks_left = --n_picks_left;
         numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
         coinBox.innerHTML = "";
-        delieBodyEClosed.style.opacity = 1;
+        delieBodyEClosed.style.display = "flex";
         getThoughtBalloonImage();
         
         setTimeout(()=> {coinBox.innerHTML = ".";}, 1500);
@@ -47,7 +69,7 @@ function handleCoinBtnClick(){
         setTimeout(()=> {coinBox.innerHTML = ". . . !";}, 3900);
     
         setTimeout(()=>{
-            delieBodyEClosed.style.opacity = 0;
+            delieBodyEClosed.style.display = "none";
             giveRandomCoin();
             button.disabled = false;
         }, 5000);
@@ -55,32 +77,6 @@ function handleCoinBtnClick(){
     // setTimeout(giveRandomCoin, 0);
 
 }
-
-const thoughtBalloon = document.getElementById("thoughtBalloon");
-const delieEyesClosed = document.getElementsByClassName("delieEyesClosed");
-
-function getThoughtBalloonImage(){
-    if(thoughtBalloon.childNodes[0]){
-        thoughtBalloon.removeChild(thoughtBalloon.childNodes[0]);
-    }
-
-    setTimeout(()=> {
-        const thoughtBalloonMakingImg = new Image();
-        thoughtBalloonMakingImg.src = `assets/thought_balloon_01.gif`;
-        thoughtBalloonMakingImg.classList.add("thoughtBalloonImg"); 
-        thoughtBalloon.appendChild(thoughtBalloonMakingImg);
-    }, 0);
-    setTimeout(()=> {
-        const thoughtBalloonNormalImg = new Image();
-        thoughtBalloonNormalImg.src = `assets/thought_ballon_02.gif`;
-        thoughtBalloonNormalImg.classList.add("thoughtBalloonImg"); 
-        thoughtBalloon.appendChild(thoughtBalloonNormalImg);
-        thoughtBalloon.removeChild(thoughtBalloon.childNodes[0]);
-    }, 1500);
-}
-
-
-
 function init(){
     numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
     coinBtn.addEventListener("click", handleCoinBtnClick);

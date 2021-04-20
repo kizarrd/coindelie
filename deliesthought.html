@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://kit.fontawesome.com/9f340f31fc.js"crossorigin="anonymous"></script>
     <title>Coin Delie</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -13,7 +13,9 @@
         <ul class="nav__list">
             <li class="nav__list-item">
               <a href="index.html" class="nav__list-link">
-                델리의 데일리 코인추천
+                  <p style="text-align: center; line-height: 120%;">
+                      델리의 데일리</br>코인추천
+                  </p>
               </a>
             </li>
             <li class="nav__list-item">
@@ -22,58 +24,57 @@
               </a>
             </li>
         </ul>
-    </nav>
-    <main class="main">
-        
-        <div id="delieRegion">
-            <div id=delieStuffs>
-                <div id=delieStuffs__monitor>
-                    <div id="monitor-delieDB">
-                    </div>
-                </div>
-                <div id="delieStuffs__monitorStand"></div>
-                <div id="delieStuffs__monitorBase"></div>
-            </div>
-            <div id="delieThePenguin">
-                <div class="searchBox">
-                    <label>
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="search" placeholder="코인 이름으로 검색" autocomplete="off"/>
-                    </label>
-                    <div id="resultBox">
-                        <div id="ui-little-diamond"></div>
-                        <ul id="searchList">
-                        </ul>
-                    </div>
-                </div>
-                <div id="delieBody"></div>
-            </div>
-            <div id=coinGeneratorBox_region>
-                <div id=thoughtBalloon></div>
-                <div id="coinGeneratedBox"></div>
+    </nav> 
+    <section class="searchTab">
+        <div class="searchBox">
+            <label>
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" placeholder="코인 이름으로 검색" autocomplete="off"/>
+            </label>
+            <div id="resultBox">
+                <div id="ui-little-diamond"></div>
+                <ul id="searchList">
+                </ul>
             </div>
         </div>
-        <div id=controlTab>
-            <div id="whatDoYouThink">
-                <div id="coinSearched"></div>
-                <button id="coinGenerateBtn">어떻게 생각해?</button>
+    </section>
+    <section id="delieRegion">
+        <div id="delieThePenguin">
+            <div id=thoughtBalloon>
+                <img class=thoughtBalloonImg src="./assets/thought_ballon_02.gif" alt="">
             </div>
-            <div id="coinNotSearched"></div>
+            <div id="coinGeneratedBox"></div>
+            <img class=delieImg src="./assets/deliebody-whole.png" alt="delieImage">
+            <img class=delieImgEyesClosed src="./assets/deliebody-eyes-closed.png">
         </div>
-        <div id="userGuide">
-            <div id="guide-0">델리는 하루 최대 세 번 당신이 알고 싶어하는</div>
-            <div id="guide-1">코인에 대해 자신의 견해를 들려줍니다.</div>
-            <div id="guide-2"><i class="fas fa-exclamation-triangle"></i>주의: 마음씨 좋은 이 펭귄은</div>
-            <div id="guide-3">때때로 지나치게 낙관적인 경향이 있습니다.</div>
-            <div id="number-reminder-counsel">남은 상담 기회: </div>
+    </section>
+    <section id=controlTab>
+        <div id="whatDoYouThink">
+            <div id="coinSearched"></div>
+            <button id="coinGenerateBtn">어떻게 생각해?</button>
         </div>
-    </main>
-    <script src="delieImage2.js"></script>
+        <div id="coinNotSearched"></div>
+    </section>
+    <article id="userGuide" style="line-height:150%">
+        <p>
+            델리는 하루 최대 세 번 당신이 알고 싶어하는</br>
+            코인에 대해 자신의 견해를 들려줍니다</br>
+            <i class="fas fa-exclamation-triangle">주의:</i>
+             마음씨 좋은 이 펭귄은</br>
+            때때로 지나치게 낙관적인 경향이 있습니다.
+        </p>
+        <div id="number-reminder-counsel">남은 상담 기회: </div>
+    </article>
+
+    
+    <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit    = "DAN-ItcQPpa90hUKtU6K" 
+        data-ad-width   = "320" 
+        data-ad-height  = "50"></ins> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <script src="coinlist.js"></script>
     <script src="thoughtlist.js"></script>
     <script src="search.js"></script>
     <script src="app2.js"></script>
-    <!-- <script src="delieImage.js"></script> -->
-    <!-- <script src="thoughtBalloonImage.js"></script> -->
 </body>
 </html>

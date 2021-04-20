@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://kit.fontawesome.com/9f340f31fc.js"crossorigin="anonymous"></script>
     <title>Coin Delie</title>
-
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <nav class="nav">
         <ul class="nav__list">
             <li class="nav__list-item">
-              <a href="index.html" class="nav__list-link" id="dailyRecomm">
-                델리의 데일리 코인추천
-              </a>
+                <a href="index.html" class="nav__list-link" id="dailyRecomm">
+                    <p style="text-align: center; line-height: 120%;">
+                        델리의 데일리</br>코인추천
+                    </p>
+                </a>
             </li>
             <li class="nav__list-item">
               <a href="deliesthought.html" class="nav__list-link">
@@ -23,35 +24,36 @@
               </a>
             </li>
         </ul>
-    </nav>
-    <main class="main">
-        
-        <div id="delieRegion">
-
-            <div id=delieStuffs></div>
-            <div id="delieThePenguin">
-                <div id="delieBody"></div>
+    </nav>        
+    <section id="delieRegion">
+        <div id="delieThePenguin">
+            <div id=thoughtBalloon>
+                <img class=thoughtBalloonImg src="./assets/thought_ballon_02.gif" alt="">
             </div>
-            <div id=coinGeneratorBox_region>
-                <div id=thoughtBalloon></div>
-                <div id="coinGeneratedBox"></div>
-            </div>
+            <div id="coinGeneratedBox"></div>
+            <img class=delieImg src="./assets/deliebody-whole.png" alt="delieImage">
+            <img class=delieImgEyesClosed src="./assets/deliebody-eyes-closed.png">
+        </div>
+    </section>
+    <section id=controlTab>
+        <button id="coinGenerateBtn">델리에게 오늘의 추천코인 물어보기</button>
+    </section>
+    <article id="userGuide" style="line-height:150%">
+        <p>
+            델리는 암호화폐 투자 전문 펭귄입니다.</br>
+            경제적 자유를 꿈꾸는 이 놀라운 생명체는</br>
+            하루 최대 세 번 유망한 코인을 추천해 줍니다.
+        </p>
+        <div id="number-reminder">남은 추천 기회: </div>
+    </article>
 
-        </div>
-        <div id=controlTab>
-            <button id="coinGenerateBtn">델리에게 오늘의 추천코인 물어보기</button>
-        </div>
-        <div id="userGuide">
-            <div id="guide-0">델리는 암호화폐 투자 전문 펭귄입니다.</div>
-            <div id="guide-1">경제적 자유를 꿈꾸는 이 놀라운 생명체는</div>
-            <div id="guide-2">하루 최대 세 번 유망한 코인을 추천해 줍니다.</div>
-            <div id="number-reminder">남은 추천 기회: </div>
-        </div>
-    </main>
-    <script src="delieImage2.js"></script>
+    
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-ItcQPpa90hUKtU6K" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"></ins> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <script src="coinlist.js"></script>
     <script src="app.js"></script>
-    <!-- <script src="delieImage.js"></script> -->
-    <!-- <script src="thoughtBalloonImage.js"></script> -->
 </body>
 </html>

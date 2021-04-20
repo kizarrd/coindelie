@@ -123,6 +123,10 @@ const coinListThought = [
 
 //https://bytutorial.com/web-tools/parentheses-brackets-braces-removal-tool
 
+// const coinList = [
+//     ["스테이터스</br>네트워크토큰"]
+// ]
+
 const coinList = [
 ["크립토닷컴체인"],
 ["비체인"],

@@ -11,7 +11,6 @@ if(!localStorage.date_last_visited_counsel || localStorage.date_last_visited_cou
 var coinBox = document.getElementById("coinGeneratedBox");
 var coinBtn = document.getElementById("coinGenerateBtn")
 var numberReminder = document.getElementById("number-reminder-counsel");
-var reminder = document.getElementById("reminder");
 const button = document.querySelector('button');
 
 function pickACoin(coinList){
@@ -26,31 +25,29 @@ function giveRandomCoin(){
     coinBox.innerHTML = pickACoin(thoughtList);
 }
 
+const delieBodyEClosed = document.querySelector(".delieImgEyesClosed");
 const thoughtBalloon = document.getElementById("thoughtBalloon");
-const delieEyesClosed = document.getElementsByClassName("delieEyesClosed");
+const thoughtBalloonImg = document.querySelector(".thoughtBalloonImg");
+const coinNotSearched = document.getElementById("coinNotSearched");
+
 
 function getThoughtBalloonImage(){
-    if(thoughtBalloon.childNodes[0]){
-        thoughtBalloon.removeChild(thoughtBalloon.childNodes[0]);
-    }
-
     setTimeout(()=> {
+        thoughtBalloonImg.style.display = "none"; 
         const thoughtBalloonMakingImg = new Image();
         thoughtBalloonMakingImg.src = `assets/thought_balloon_01.gif`;
-        thoughtBalloonMakingImg.classList.add("thoughtBalloonImg"); 
+        thoughtBalloonMakingImg.classList.add("thoughtBalloonGeneratingImg"); 
         thoughtBalloon.appendChild(thoughtBalloonMakingImg);
     }, 0);
+    
     setTimeout(()=> {
-        const thoughtBalloonNormalImg = new Image();
-        thoughtBalloonNormalImg.src = `assets/thought_ballon_02.gif`;
-        thoughtBalloonNormalImg.classList.add("thoughtBalloonImg"); 
-        thoughtBalloon.appendChild(thoughtBalloonNormalImg);
-        thoughtBalloon.removeChild(thoughtBalloon.childNodes[0]);
+        thoughtBalloonImg.style.display = "flex";
+        thoughtBalloon.removeChild(document.querySelector(".thoughtBalloonGeneratingImg"));
     }, 1500);
+
 }
 
 
-const coinNotSearched = document.getElementById("coinNotSearched");
 function handleCoinBtnClick(){
     
     var coin_counseled_string = localStorage.getItem("coin_already_counseled");
@@ -72,7 +69,7 @@ function handleCoinBtnClick(){
         localStorage.num_counsel_left = --n_counsel_left;
         numberReminder.innerHTML = `남은 상담 기회:  ${localStorage.num_counsel_left}번`;
         coinBox.innerHTML = "";
-        delieBodyEClosed.style.opacity = 1;
+        delieBodyEClosed.style.display = "flex";
         getThoughtBalloonImage();
         
         setTimeout(()=> {coinBox.innerHTML = ".";}, 1500);
@@ -81,7 +78,7 @@ function handleCoinBtnClick(){
         setTimeout(()=> {coinBox.innerHTML = ". . . !";}, 3900);
     
         setTimeout(()=>{
-            delieBodyEClosed.style.opacity = 0;
+            delieBodyEClosed.style.display = "none";
             giveRandomCoin();
             button.disabled = false;
         }, 5000);

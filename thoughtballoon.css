@@ -1,0 +1,71 @@
+#delieRegion {
+    height: 420px;
+}
+
+#delieThePenguin {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    width:350px;
+    height: 100%;
+
+}
+
+/* #delieBody{
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 300px;
+} */
+
+.delieImg, .delieImgEyesClosed{
+    position:absolute;
+    bottom:0px;
+    width: 245px;
+    height: 270px;
+}
+
+.delieImgEyesClosed{
+    display: none;
+}
+
+/* #coinGeneratorBox_region{
+    display: flex;
+    position: relative;
+    width: 25%;
+    height: 100%;
+    margin-left: 10px;
+} */
+
+#coinGeneratedBox {
+    position:absolute;
+    right: 5px;
+    top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    /* border: 2px solid black; */
+}
+
+#thoughtBalloon{
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:200px;
+    height:200px;
+}
+
+.thoughtBalloonImg, .thoughtBalloonGeneratingImg{
+    /* position:relative; */
+    width:100%;
+    height:auto;
+}
+
+.thoughtBalloonImg {
+    display: none;
+}
