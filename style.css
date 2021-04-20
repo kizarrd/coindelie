@@ -31,6 +31,18 @@ article {
     text-align: center;
 }
 
+footer {
+    text-align: center; 
+    line-height: 120%;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    bottom: 0px;
+    color: #4f5b66;
+    font-size: 12px;
+}
+
 #dailyRecomm{
     color: #202c3a;
 }
@@ -228,4 +240,9 @@ article {
 
 .fa-exclamation-triangle{
     color:red;
+}
+
+#adbanner__bottom{
+    width:320px;
+    margin: 0 auto;
 }
