@@ -6,14 +6,13 @@ var d = new Date();
 
 if(!localStorage.date_last_visited || localStorage.date_last_visited != d.getDate()){
     localStorage.setItem('date_last_visited', d.getDate());
-    localStorage.setItem('num_picks_left', 3);
+    localStorage.setItem('num_picks_left', 50);
 }
 
 
 var coinBox = document.getElementById("coinGeneratedBox");
 var coinBtn = document.getElementById("coinGenerateBtn")
 var numberReminder = document.getElementById("number-reminder");
-var reminder = document.getElementById("reminder");
 const button = document.querySelector('button');
 
 function pickACoin(coinList){
@@ -29,32 +28,30 @@ function giveRandomCoin(){
 }
 
 function handleCoinBtnClick(){
-    button.disabled = true;
-    var n_picks_left = parseInt(localStorage.num_picks_left);
-
-    if(n_picks_left == 0){
-        reminder.innerHTML = "오늘의 추천 기회를 모두 소진하였습니다. 내일 다시 부탁할 수 있습니다."
+    
+    if(localStorage.num_picks_left <= 0){
+        numberReminder.innerHTML = "오늘의 추천 기회를 모두 소진하였습니다. 내일 다시 부탁할 수 있습니다."
         return;
     }else{
+        button.disabled = true;
+        var n_picks_left = parseInt(localStorage.num_picks_left);
         localStorage.num_picks_left = --n_picks_left;
         numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
-    }
-
-
-    coinBox.innerHTML = "";
-    delieBodyEClosed.style.opacity = 1;
-    getThoughtBalloonImage();
+        coinBox.innerHTML = "";
+        delieBodyEClosed.style.opacity = 1;
+        getThoughtBalloonImage();
+        
+        setTimeout(()=> {coinBox.innerHTML = ".";}, 1500);
+        setTimeout(()=> {coinBox.innerHTML = ". .";}, 2300);
+        setTimeout(()=> {coinBox.innerHTML = ". . .";}, 3100);
+        setTimeout(()=> {coinBox.innerHTML = ". . . !";}, 3900);
     
-    setTimeout(()=> {coinBox.innerHTML = ".";}, 1500);
-    setTimeout(()=> {coinBox.innerHTML = ". .";}, 2300);
-    setTimeout(()=> {coinBox.innerHTML = ". . .";}, 3100);
-    setTimeout(()=> {coinBox.innerHTML = ". . . !";}, 3900);
-
-    setTimeout(()=>{
-        delieBodyEClosed.style.opacity = 0;
-        giveRandomCoin();
-        button.disabled = false;
-    }, 5000);
+        setTimeout(()=>{
+            delieBodyEClosed.style.opacity = 0;
+            giveRandomCoin();
+            button.disabled = false;
+        }, 5000);
+    }
     // setTimeout(giveRandomCoin, 0);
 
 }
