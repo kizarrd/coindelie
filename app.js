@@ -52,7 +52,7 @@ function getThoughtBalloonImage(){
 function handleCoinBtnClick(){
     
     if(localStorage.num_picks_left <= 0){
-        numberReminder.innerHTML = "오늘의 추천 기회를 모두 소진하였습니다. 내일 다시 부탁할 수 있습니다."
+        numberReminder.innerHTML = "오늘의 추천 기회를 모두 소진하였습니다.</br>내일 다시 부탁할 수 있습니다."
         return;
     }else{
         button.disabled = true;
