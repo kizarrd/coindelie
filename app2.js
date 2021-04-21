@@ -59,7 +59,7 @@ function handleCoinBtnClick(){
     }else if(!coinSearched.innerHTML){
         coinNotSearched.innerHTML = "코인을 검색하여 선택해 주세요.";
     }else if(coin_arr_counseled.includes(coinSearched.innerHTML)){ 
-        coinNotSearched.innerHTML = "한 번 상담받은 코인은 내일 다시 물어볼 수 있습니다.";
+        coinNotSearched.innerHTML = "같은 코인은 내일 다시 상담할 수 있습니다.";
     }else{
         coin_arr_counseled.push(coinSearched.innerHTML);
         localStorage.coin_already_counseled = JSON.stringify(coin_arr_counseled);

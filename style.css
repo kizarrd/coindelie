@@ -93,7 +93,7 @@ footer {
     margin: 10px 0px;
     display:flex;
     flex-direction: column;
-    height: 130px;
+    height: 150px;
     align-items: center;
     justify-content: space-between;
     font-weight: lighter;
@@ -175,7 +175,13 @@ footer {
     padding-left: 7px;
 }
 
+#number-reminder-counsel{
+    font-weight: bold;
+}
 
+#number-reminder{
+    font-weight: bold;
+}
 
 /* #ui-little-diamond {
     width: 14px;
@@ -218,12 +224,12 @@ footer {
 
 #resultBox {
     display: none;
-    width: 180px;
+    width: 200px;
     max-height: 160px;
     overflow: auto;
     position: absolute;
     top: 35px;
-    left: 15px;
+    left: 60px;
     background: #fff;
     /* border: 1px solid #DBDBDB; */
     border-radius: 10px;
