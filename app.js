@@ -6,7 +6,7 @@ var d = new Date();
 
 if(!localStorage.date_last_visited || localStorage.date_last_visited != d.getDate()){
     localStorage.setItem('date_last_visited', d.getDate());
-    localStorage.setItem('num_picks_left', 50);
+    localStorage.setItem('num_picks_left', 3);
 }
 
 

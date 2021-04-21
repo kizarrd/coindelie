@@ -2,7 +2,7 @@ var d = new Date();
 
 if(!localStorage.date_last_visited_counsel || localStorage.date_last_visited_counsel != d.getDate()){
     localStorage.setItem('date_last_visited_counsel', d.getDate());
-    localStorage.setItem('num_counsel_left', 50);
+    localStorage.setItem('num_counsel_left', 3);
     var arr = [];
     localStorage.setItem('coin_already_counseled', JSON.stringify(arr));
 }
