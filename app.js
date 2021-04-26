@@ -165,8 +165,10 @@ function init(){
     document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`;
 
     // document.querySelector(".kakao_ad_area").addEventListener("click", handleAdBannerClick);
-    document.getElementById("select_exchange").addEventListener('onchange', handleSelected(array_filtered));
-    document.getElementById("select_keyword").addEventListener('onchange', handleSelected(array_filtered));
+    // document.getElementById("select_exchange").addEventListener('onchange', handleSelected(array_filtered));
+    // document.getElementById("select_keyword").addEventListener('onchange', handleSelected(array_filtered));
+    document.getElementById("select_exchange").addEventListener('onchange', console.log("value changed"));
+    document.getElementById("select_keyword").addEventListener('onchange', console.log("value changed"));
 }
 
 init();
