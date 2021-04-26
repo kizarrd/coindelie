@@ -116,6 +116,10 @@ function handleCoinBtnClick(){
     }else{
         button.disabled = true;
         const array_filtered = filterArray(exchange, keyword);
+        document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`
+        if(array_filtered.length == 0){
+            document.getElementById("num_filtered_coin").innerHTML = "해당되는 코인이 없습니다.</br>다시 선택해 주세요.";
+        }
         console.log(array_filtered);
         var n_picks_left = parseInt(localStorage.num_picks_left);
         localStorage.num_picks_left = --n_picks_left;
