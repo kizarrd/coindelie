@@ -106,9 +106,10 @@ function getThoughtBalloonImage(){
     }, 1500);
 }
 
+const exchange = document.getElementById("select_exchange").value;
+const keyword = document.getElementById("select_keyword").value;
+
 function handleCoinBtnClick(){
-    const exchange = document.getElementById("select_exchange").value;
-    const keyword = document.getElementById("select_keyword").value;
     
     if(localStorage.num_picks_left <= 0){
         numberReminder.innerHTML = "오늘의 추천 기회를 모두 소진하였습니다.</br>내일 다시 부탁할 수 있습니다."
