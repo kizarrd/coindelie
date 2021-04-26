@@ -132,6 +132,7 @@ select {
 }
 
 #coinGenerateBtn {
+    margin-top: 15px;
     background-color: #ff6b6b;
     color: white;
     font-size: 18px;

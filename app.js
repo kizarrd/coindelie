@@ -152,7 +152,8 @@ function handleCoinBtnClick(){
 //     numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
 // }
 
-function handleSelected(){
+function handleSelected(array_filtered){
+    console.log("changed");
     array_filtered = filterArray(exchange, keyword);
     document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`;
 }
@@ -164,8 +165,8 @@ function init(){
     document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`;
 
     // document.querySelector(".kakao_ad_area").addEventListener("click", handleAdBannerClick);
-    document.getElementById("select_exchange").addEventListener('change', handleSelected);
-    document.getElementById("select_keyword").addEventListener('change', handleSelected);
+    document.getElementById("select_exchange").addEventListener('change', handleSelected(array_filtered));
+    document.getElementById("select_keyword").addEventListener('change', handleSelected(array_filtered));
 }
 
 init();
