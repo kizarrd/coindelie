@@ -2,8 +2,8 @@ var d = new Date();
 
 if(!localStorage.date_last_visited_counsel || localStorage.date_last_visited_counsel != d.getDate()){
     localStorage.setItem('date_last_visited_counsel', d.getDate());
-    if(!localStorage.num_counsel_left || localStorage.num_counsel_left < 3){
-        localStorage.setItem('num_counsel_left', 3);
+    if(!localStorage.num_counsel_left || localStorage.num_counsel_left < 5){
+        localStorage.setItem('num_counsel_left', 5);
     }
     var arr = [];
     localStorage.setItem('coin_already_counseled', JSON.stringify(arr));
