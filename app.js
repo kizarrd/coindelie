@@ -119,9 +119,10 @@ function handleCoinBtnClick(){
         // array_filtered = filterArray(exchange, keyword);
         if(array_filtered.length == 0){
             document.getElementById("num_filtered_coin").innerHTML = "거래소와 키워드를 다시 선택해 주세요.";
+            button.disabled = false;
             return;
         }
-        console.log(array_filtered);
+        const temp_arr = array_filtered;
         var n_picks_left = parseInt(localStorage.num_picks_left);
         localStorage.num_picks_left = --n_picks_left;
         numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
@@ -136,7 +137,7 @@ function handleCoinBtnClick(){
     
         setTimeout(()=>{
             delieBodyEClosed.style.display = "none";
-            giveRandomCoin(array_filtered);
+            giveRandomCoin(temp_arr);
             button.disabled = false;
         }, 3100);
     }
