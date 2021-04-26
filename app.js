@@ -141,8 +141,10 @@ function handleCoinBtnClick(){
 
 
 function handleAdBannerClick(){
+    console.log("clicked");
     var n_picks_left = parseInt(localStorage.num_picks_left);
     localStorage.num_picks_left = ++n_picks_left;
+    numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
 }
 
 
@@ -150,6 +152,7 @@ function init(){
     numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
     coinBtn.addEventListener("click", handleCoinBtnClick);
     adBanner.addEventListener("click", handleAdBannerClick);
+    document.getElementById("userGuide").addEventListener("click", handleAdBannerClick);
 }
 
 init();
