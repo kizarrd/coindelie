@@ -167,8 +167,10 @@ function init(){
     // document.querySelector(".kakao_ad_area").addEventListener("click", handleAdBannerClick);
     // document.getElementById("select_exchange").addEventListener('onchange', handleSelected(array_filtered));
     // document.getElementById("select_keyword").addEventListener('onchange', handleSelected(array_filtered));
-    document.getElementById("select_exchange").addEventListener('select', console.log("value changed"));
-    document.getElementById("select_keyword").addEventListener('select', console.log("value changed"));
+    document.getElementById("select_exchange").addEventListener('change', (event)=>{
+        console.log("value changed");  
+    } );
+    document.getElementById("select_keyword").addEventListener('change', console.log("value changed"));
 }
 
 init();
