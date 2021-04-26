@@ -6,7 +6,9 @@ var d = new Date();
 
 if(!localStorage.date_last_visited || localStorage.date_last_visited != d.getDate()){
     localStorage.setItem('date_last_visited', d.getDate());
-    localStorage.setItem('num_picks_left', 3);
+    if(!localStorage.num_picks_left || localStorage.num_picks_left < 3){
+        localStorage.setItem('num_picks_left', 3);
+    }
 }
 
 
@@ -68,6 +70,7 @@ var coinBox = document.getElementById("coinGeneratedBox");
 var coinBtn = document.getElementById("coinGenerateBtn")
 var numberReminder = document.getElementById("number-reminder");
 const button = document.querySelector('button');
+const adBanner = document.getElementById("adbanner__bottom");
 
 function pickACoin(array_filtered){
     const listSize = array_filtered.length;
@@ -135,9 +138,18 @@ function handleCoinBtnClick(){
     // setTimeout(giveRandomCoin, 0);
 
 }
+
+
+function handleAdBannerClick(){
+    var n_picks_left = parseInt(localStorage.num_picks_left);
+    localStorage.num_picks_left = ++n_picks_left;
+}
+
+
 function init(){
     numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
     coinBtn.addEventListener("click", handleCoinBtnClick);
+    coinBtn.adBanner("click", handleAdBannerClick);
 }
 
 init();
