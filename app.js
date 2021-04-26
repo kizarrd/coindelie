@@ -149,7 +149,7 @@ function handleAdBannerClick(){
 function init(){
     numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
     coinBtn.addEventListener("click", handleCoinBtnClick);
-    coinBtn.adBanner("click", handleAdBannerClick);
+    adBanner.addEventListener("click", handleAdBannerClick);
 }
 
 init();
