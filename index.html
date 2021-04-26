@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta property="og:title" content="coin delie | 코인전문펭귄">
-    <meta property="og:description" content="코인 추천/평가 해주는 펭귄">
+    <meta property="og:title" content="코인델리| 코인전문펭귄">
+    <meta property="og:description" content="코인 추천/코인 추첨/코인 정보/코린이">
     <meta property="og:image" content="assets/delie-profile.png">
     <script src="https://kit.fontawesome.com/9f340f31fc.js"crossorigin="anonymous"></script>
-    <title>coin delie | 코인전문펭귄</title>
+    <title>코인델리 | 코인전문펭귄</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="shortcut icon" href="assets/delie-profile-ico.png">
+    <link rel="icon" href="assets/delie-profile-ico.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/delie-profile-ico.png">
+    <link rel="apple-touch-icon" href="assets/delie-profile-ico.png">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0QW8G1E54"></script>
     <script>
@@ -25,17 +27,33 @@
     <nav class="nav">
         <ul class="nav__list">
             <li class="nav__list-item">
-                <a href="index.html" class="nav__list-link" id="dailyRecomm">
+                <a href="index.html" class="nav__list-link" id="selected">
                     <p style="text-align: center; line-height: 120%;">
-                        델리의 데일리</br>코인추천
+                        델리의</br>데일리</br>코인추천
                     </p>
                 </a>
             </li>
             <li class="nav__list-item">
               <a href="deliesthought.html" class="nav__list-link">
-                이 코인 어때?
+                <p style="text-align: center; line-height: 120%;">
+                    이 코인</br>어때?
+                </p>
               </a>
             </li>
+            <li class="nav__list-item">
+                <a href="coinsearch.html" class="nav__list-link">
+                    <p style="text-align: center; line-height: 120%;">
+                        코인</br>정보</br>검색
+                    </p>
+                </a>
+            </li>
+            <!-- <li class="nav__list-item">
+                <a href="index.html" class="nav__list-link">
+                    <p style="text-align: center; line-height: 120%;">
+                        용어
+                    </p>
+                </a>
+            </li> -->
         </ul>
     </nav>        
     <section id="delieRegion">
@@ -48,6 +66,49 @@
             <img class=delieImgEyesClosed src="./assets/deliebody-eyes-closed.png">
         </div>
     </section>
+    <section id=select_guide>
+        <div>거래소와 키워드를 선택하세요</div>
+    </section>
+    <section id=controlTab_0>
+        <select id = select_exchange>
+            <optgroup label = "거래소/마켓">
+               <option value = "whatever">아무거나</option>
+               <option value = "upbit_krw">업비트-원화</option>
+               <option value = "upbit_btc">업비트-BTC</option>
+               <option value = "bithumb_krw">빗썸-원화</option>
+               <option value = "bithumb_btc">빗썸-BTC</option>
+           </optgroup>         
+       </select>
+        <select id = select_keyword>
+             <optgroup label = "코인 키워드/종류">
+                <option value = "whatever">아무거나</option>
+                <option value = "bitcoin">비트코인계열</option>
+                <option value = "ethereum">이더리움계열</option>
+                <option value = "nft">NFT</option>
+                <option value = "defi">DeFi</option>
+                <option value = "major">(구)메이저</option>
+                <option value = "china">중국</option>
+                <option value = "kimchi">김치</option>
+                <option value = "kakao">카카오 묻은</option>
+                <option value = "metaverse">메타버스</option>
+                <option value = "gaming">게임</option>
+                <option value = "medical">의료</option>
+                <option value = "platform">플랫폼</option>
+                <option value = "dex">분산화거래소</option>
+                <option value = "payment">결제서비스</option>
+                <option value = "ad">광고산업</option>
+                <option value = "storage">스토리지</option>
+                <option value = "sns">sns</option>
+                <option value = "dist_computing">연산력임대</option>
+                <option value = "authentication">인증서비스</option>
+                <option value = "contents">컨텐츠</option>
+                <option value = "ai_bigdata">AI/빅데이터</option>
+                <option value = "iot">IoT</option>
+
+                <!-- <option value = ""></option> -->
+            </optgroup>         
+        </select>
+    </section>
     <section id=controlTab>
         <button id="coinGenerateBtn">델리에게 오늘의 추천코인 물어보기</button>
     </section>
@@ -56,20 +117,21 @@
         <p>
             델리는 암호화폐 투자 전문 펭귄입니다.</br>
             경제적 자유를 꿈꾸는 이 놀라운 생명체는</br>
-            하루 최대 세 번 유망한 코인을 추천해 줍니다.
+            이름이 맘에드는 코인을 추천해 줍니다.</br>
+            매일 최소 3회의 기회가 제공됩니다. 
         </p>
     </article>
 
-    <div id="adbanner__bottom">
+    <!-- <div id="adbanner__bottom">
         <ins class="kakao_ad_area" style="display:none;" 
         data-ad-unit    = "DAN-ItcQPpa90hUKtU6K" 
         data-ad-width   = "320" 
         data-ad-height  = "50"></ins> 
-    </div>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div> -->
+    <!-- <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script> -->
     <footer>
         <p>
-            버그 및 기타 문의: coindelie10@gmail.com
+            버그/오류 및 기타 문의: coindelie10@gmail.com
         </p>
     </footer>
     <script src="coinlist.js"></script>

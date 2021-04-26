@@ -1,0 +1,30 @@
+.coin_info-region{
+    width: 350px;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#terminology{
+    margin-bottom: 20px;
+}
+
+.keywords{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.guitar{
+    margin-top: 10px;
+}
+
+.keywords-elements{
+    margin: 0px 10px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    background-color: rgb(221, 219, 219);
+}

@@ -21,7 +21,7 @@ function pickACoin(coinList){
     return coinSelected;
 }
 
-function giveRandomCoin(){
+function giveRandomThought(){
     coinBox.innerHTML = pickACoin(thoughtList);
 }
 
@@ -54,7 +54,6 @@ function handleCoinBtnClick(){
     var coin_arr_counseled = JSON.parse(coin_counseled_string);
 
     if(localStorage.num_counsel_left <= 0){
-        console.log("발동")
         numberReminder.innerHTML = "오늘의 상담 기회를 모두 소진하였습니다.</br>내일 다시 부탁할 수 있습니다."
     }else if(!coinSearched.innerHTML){
         coinNotSearched.innerHTML = "코인을 검색하여 선택해 주세요.";
@@ -73,15 +72,15 @@ function handleCoinBtnClick(){
         getThoughtBalloonImage();
         
         setTimeout(()=> {coinBox.innerHTML = ".";}, 1500);
-        setTimeout(()=> {coinBox.innerHTML = ". .";}, 2300);
-        setTimeout(()=> {coinBox.innerHTML = ". . .";}, 3100);
-        setTimeout(()=> {coinBox.innerHTML = ". . . !";}, 3900);
+        setTimeout(()=> {coinBox.innerHTML = ". .";}, 1700);
+        setTimeout(()=> {coinBox.innerHTML = ". . .";}, 1900);
+        setTimeout(()=> {coinBox.innerHTML = ". . . !";}, 2100);
     
         setTimeout(()=>{
             delieBodyEClosed.style.display = "none";
-            giveRandomCoin();
+            giveRandomThought();
             button.disabled = false;
-        }, 5000);
+        }, 3100);
     }
 
 }

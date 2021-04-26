@@ -10,21 +10,75 @@ if(!localStorage.date_last_visited || localStorage.date_last_visited != d.getDat
 }
 
 
+
+function filterArray(exchange, keyword){
+    var arr1 = [];
+    var arr2 = [];
+    var i;
+
+    if(exchange=="whatever"){
+        for(i=0; i<allCoinList.length; i++){
+            arr1.push(allCoinList[i]);
+        }
+    }else{
+        for(i=0; i<allCoinList.length; i++){
+            if(eval("allCoinList[i]."+ exchange) == 1){
+                arr1.push(allCoinList[i]);
+            }
+        }
+    }
+
+    if(keyword=="whatever"){
+        for(i=0; i<arr1.length; i++){
+            arr2.push(arr1[i].name);
+        }
+    }else{
+        for(i=0; i<arr1.length; i++){
+            if(eval("arr1[i]."+ keyword) == 1){
+                arr2.push(arr1[i].name);
+            }
+        }
+    }
+
+    for(i=0; i<arr2.length; i++){
+        if(arr2[i] == "더마이다스터치골드"){
+            arr2[i] = "더마이다스</br>터치골드";
+        }else if(arr2[i] == "리피오크레딧네트워크"){
+            arr2[i] = "리피오크레딧</br>네트워크";
+        }else if(arr2[i] == "머신익스체인지코인"){
+            arr2[i] = "머신</br>익스체인지코인";
+        }else if(arr2[i] == "비트코인다이아몬드"){
+            arr2[i] = "비트코인</br>다이아몬드";
+        }else if(arr2[i] == "비트코인캐시에이비씨"){
+            arr2[i] = "비트코인캐시</br>에이비씨";
+        }else if(arr2[i] == "스테이터스네트워크토큰"){
+            arr2[i] = "스테이터스</br>네트워크토큰";
+        }
+        // else if(arr[i] == ""){
+        //     arr[i] = "";
+        // }
+
+    }
+
+    return arr2;
+}
+
+
 var coinBox = document.getElementById("coinGeneratedBox");
 var coinBtn = document.getElementById("coinGenerateBtn")
 var numberReminder = document.getElementById("number-reminder");
 const button = document.querySelector('button');
 
-function pickACoin(coinList){
-    const listSize = coinList.length;
+function pickACoin(array_filtered){
+    const listSize = array_filtered.length;
     var randomNumber = Math.floor(Math.random() * listSize);
-    var coinSelected = coinList[randomNumber];
+    var coinSelected = array_filtered[randomNumber];
     
     return coinSelected;
 }
 
-function giveRandomCoin(){
-    coinBox.innerHTML = pickACoin(coinList);
+function giveRandomCoin(array_filtered){
+    coinBox.innerHTML = pickACoin(array_filtered);
 }
 
 const delieBodyEClosed = document.querySelector(".delieImgEyesClosed");
@@ -50,12 +104,16 @@ function getThoughtBalloonImage(){
 }
 
 function handleCoinBtnClick(){
+    const exchange = document.getElementById("select_exchange").value;
+    const keyword = document.getElementById("select_keyword").value;
     
     if(localStorage.num_picks_left <= 0){
         numberReminder.innerHTML = "오늘의 추천 기회를 모두 소진하였습니다.</br>내일 다시 부탁할 수 있습니다."
         return;
     }else{
         button.disabled = true;
+        const array_filtered = filterArray(exchange, keyword);
+        console.log(array_filtered);
         var n_picks_left = parseInt(localStorage.num_picks_left);
         localStorage.num_picks_left = --n_picks_left;
         numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
@@ -64,15 +122,15 @@ function handleCoinBtnClick(){
         getThoughtBalloonImage();
         
         setTimeout(()=> {coinBox.innerHTML = ".";}, 1500);
-        setTimeout(()=> {coinBox.innerHTML = ". .";}, 2300);
-        setTimeout(()=> {coinBox.innerHTML = ". . .";}, 3100);
-        setTimeout(()=> {coinBox.innerHTML = ". . . !";}, 3900);
+        setTimeout(()=> {coinBox.innerHTML = ". .";}, 1700);
+        setTimeout(()=> {coinBox.innerHTML = ". . .";}, 1900);
+        setTimeout(()=> {coinBox.innerHTML = ". . . !";}, 2100);
     
         setTimeout(()=>{
             delieBodyEClosed.style.display = "none";
-            giveRandomCoin();
+            giveRandomCoin(array_filtered);
             button.disabled = false;
-        }, 5000);
+        }, 3100);
     }
     // setTimeout(giveRandomCoin, 0);
 

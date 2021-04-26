@@ -34,14 +34,14 @@
               </a>
             </li>
             <li class="nav__list-item">
-              <a href="deliesthought.html" class="nav__list-link"  id="selected"">
+              <a href="deliesthought.html" class="nav__list-link">
                 <p style="text-align: center; line-height: 120%;">
                     이 코인</br>어때?
                 </p>
               </a>
             </li>
             <li class="nav__list-item">
-                <a href="coinsearch.html" class="nav__list-link">
+                <a href="coinsearch.html" class="nav__list-link" id="selected">
                     <p style="text-align: center; line-height: 120%;">
                         코인</br>정보</br>검색
                     </p>
@@ -53,7 +53,7 @@
         <div class="searchBox">
             <label>
                 <i class="fas fa-search"></i>
-                <input type="text" id="search" placeholder="코인 한글 이름으로 검색" autocomplete="off"/>
+                <input type="text" id="search" placeholder="코인 이름으로 검색" autocomplete="off"/>
             </label>
             <div id="resultBox">
                 <div id="ui-little-diamond"></div>
@@ -62,32 +62,31 @@
             </div>
         </div>
     </section>
-    <section id="delieRegion">
-        <div id="delieThePenguin">
-            <div id=thoughtBalloon>
-                <img class=thoughtBalloonImg src="./assets/thought_ballon_02.gif" alt="">
-            </div>
-            <div id="coinGeneratedBox"></div>
-            <img class=delieImg src="./assets/deliebody-whole.png" alt="delieImage">
-            <img class=delieImgEyesClosed src="./assets/deliebody-eyes-closed.png">
-        </div>
-    </section>
+
     <section id=controlTab>
         <div id="whatDoYouThink">
             <div id="coinSearched"></div>
-            <button id="coinGenerateBtn">어떻게 생각해?</button>
+            <button id="coinGenerateBtn">검색하기</button>
         </div>
         <div id="coinNotSearched"></div>
     </section>
-    <article id="userGuide" style="line-height:150%">
-        <p id="number-reminder-counsel">남은 상담 기회: </p>
-        <p>
-            델리는 하루 최소 세 번 당신이 알고 싶어하는</br>
-            코인에 대해 자신의 견해를 들려줍니다</br>
-            <i class="fas fa-exclamation-triangle">주의:</i>
-             마음씨 좋은 이 펭귄은</br>
-            때때로 지나치게 낙관적인 경향이 있습니다.
-        </p>
+    <section class="coin_info">
+        <div class="coin_info-region">
+            <h1 id="coin_name">이름: </h1>
+            <div class="keywords">키워드: </div>
+            <div class="guitar">기타: </div>
+        </div>
+    </section>
+    <article id="terminology" style="line-height:150%">
+        <ul>
+            <li>*dist_computing: 연산력임대 서비스</li>
+            <li>*dex: 분산화 거래소</li>
+            <li>*dao: Decentralized Autonomous Organization</li>
+            <li>*ad: 광고 서비스</li>
+            <li>*dist_computing: 광고 서비스</li>
+            <li>*authentication: (신원)인증 서비스</li>
+            <li>*iot: internet of things</li>
+        </ul>
     </article>
 
     
@@ -106,6 +105,6 @@
     <script src="coinlist.js"></script>
     <script src="thoughtlist.js"></script>
     <script src="search.js"></script>
-    <script src="app2.js"></script>
+    <script src="app3.js"></script>
 </body>
 </html>

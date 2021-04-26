@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "thoughtballoon.css";
+@import "coinsearch.css";
 
  /* https://flatuicolors.com/palette/ca */
 
@@ -44,11 +45,7 @@ footer {
     font-size: 12px;
 }
 
-#dailyRecomm{
-    color: #202c3a;
-}
-
-#deliesthought{
+#selected{
     color: #202c3a;
 }
 
@@ -57,7 +54,7 @@ footer {
     width: 100%;
     padding: 20px 50px;
     margin: 10px 0px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight:bold;
     color: #6a7988;
     box-sizing: border-box;
@@ -73,9 +70,9 @@ footer {
     justify-content: center;
 }
   
-.nav__list-link {
+.nav__list-item {
     /* position: relative; */
-    margin: 0px 15px;
+    margin: 0px 7px;
 }
   
 
@@ -97,6 +94,21 @@ footer {
     align-items: center;
     justify-content: space-between;
     font-weight: lighter;
+}
+
+/* #controlTab_0{
+    height: 150px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+select {
+    margin: 0px 10px;
+}
+
+#select_guide{
+    margin: 10px 0px;
 }
 
 #controlTab{
