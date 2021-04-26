@@ -132,7 +132,7 @@ select {
 }
 
 #coinGenerateBtn {
-    margin-top: 15px;
+    margin-top: 10px;
     background-color: #ff6b6b;
     color: white;
     font-size: 18px;
@@ -163,7 +163,6 @@ select {
     padding: 10px;
     border: none;
     border-radius: 10px;
-    margin-bottom: 15px;
 }
 
 /* .delieEyesClosed{

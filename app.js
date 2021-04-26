@@ -123,6 +123,7 @@ function handleCoinBtnClick(){
             return;
         }
         const temp_arr = array_filtered;
+        console.log(temp_arr);
         var n_picks_left = parseInt(localStorage.num_picks_left);
         localStorage.num_picks_left = --n_picks_left;
         numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
@@ -141,8 +142,6 @@ function handleCoinBtnClick(){
             button.disabled = false;
         }, 3100);
     }
-    // setTimeout(giveRandomCoin, 0);
-
 }
 
 
@@ -154,7 +153,6 @@ function handleCoinBtnClick(){
 // }
 
 function handleSelected(event){
-    console.log("changed");
     exchange = document.getElementById("select_exchange").value;
     keyword = document.getElementById("select_keyword").value;
     array_filtered = filterArray(exchange, keyword);
@@ -167,9 +165,6 @@ function init(){
     var array_filtered = filterArray(exchange, keyword);
     document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`;
 
-    // document.querySelector(".kakao_ad_area").addEventListener("click", handleAdBannerClick);
-    // document.getElementById("select_exchange").addEventListener('onchange', handleSelected(array_filtered));
-    // document.getElementById("select_keyword").addEventListener('onchange', handleSelected(array_filtered));
     document.getElementById("select_exchange").addEventListener('change', event => handleSelected());
     document.getElementById("select_keyword").addEventListener('change',  event => handleSelected());
 }
