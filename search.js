@@ -38,13 +38,6 @@ function init(){
                 })
                 var coinText = document.querySelectorAll(".coin_text");
                 var coinTextSpan = document.querySelectorAll(".coin_span");
-                console.log(coinText.length);
-                console.log(coinText[0]);
-                // coinText[0].addEventListener("click", function() {
-                //     console.log("clicked");
-                // });
-
-                console.log(coinTextSpan[0]);
 
                 for(var i=0; i < coinText.length; i++){
                     coinText[i].addEventListener("mousedown", function() {

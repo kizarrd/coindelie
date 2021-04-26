@@ -15,14 +15,11 @@ function getKeywords(coin_name){
 
     const arr = Object.keys(allCoinList[0]);
 
-    console.log(arr);
-
     for(var i=2; i<arr.length-1; i++){
         if(eval("coin." + arr[i]) == 1){
             const keywordElement = document.createElement("div");
             keywordElement.classList.add("keywords-elements");
             keywordElement.innerHTML = arr[i];
-            console.log(divKeywords);
             divKeywords.appendChild(keywordElement);
         }
     }
