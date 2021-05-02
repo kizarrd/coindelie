@@ -159,9 +159,11 @@ function handleSelected(event){
     document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`;
 }
 
+var array_filtered = null;
+
 function init(){
     numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
-    var array_filtered = filterArray(exchange, keyword);
+    array_filtered = filterArray(exchange, keyword);
     document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`;
     document.getElementById("select_exchange").addEventListener('change', event => handleSelected());
     document.getElementById("select_keyword").addEventListener('change',  event => handleSelected());
