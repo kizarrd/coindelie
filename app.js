@@ -161,8 +161,8 @@ function handleSelected(event){
 
 function init(){
     numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
-    coinBtn.addEventListener("click", handleCoinBtnClick);
     var array_filtered = filterArray(exchange, keyword);
+    coinBtn.addEventListener("click", handleCoinBtnClick);
     document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`;
 
     document.getElementById("select_exchange").addEventListener('change', event => handleSelected());
