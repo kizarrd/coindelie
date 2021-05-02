@@ -109,7 +109,7 @@ function getThoughtBalloonImage(){
 var exchange = document.getElementById("select_exchange").value;
 var keyword = document.getElementById("select_keyword").value;
 
-function handleCoinBtnClick(){
+function handleCoinBtnClick(array_filtered){
     
     if(localStorage.num_picks_left <= 0){
         numberReminder.innerHTML = "오늘의 추천 기회를 모두 소진하였습니다.</br>내일 다시 부탁할 수 있습니다."
@@ -162,7 +162,7 @@ function handleSelected(event){
 function init(){
     numberReminder.innerHTML = `남은 추천 기회:  ${localStorage.num_picks_left}번`;
     var array_filtered = filterArray(exchange, keyword);
-    coinBtn.addEventListener("click", handleCoinBtnClick);
+    coinBtn.addEventListener("click", handleCoinBtnClick(array_filtered));
     document.getElementById("num_filtered_coin").innerHTML = `${array_filtered.length} 개의 코인이 선택되었습니다.`;
 
     document.getElementById("select_exchange").addEventListener('change', event => handleSelected());
