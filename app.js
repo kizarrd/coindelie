@@ -109,7 +109,7 @@ function getThoughtBalloonImage(){
 var exchange = document.getElementById("select_exchange").value;
 var keyword = document.getElementById("select_keyword").value;
 
-function handleCoinBtnClick(array_filtered){
+function handleCoinBtnClick(){
     
     if(localStorage.num_picks_left <= 0){
         numberReminder.innerHTML = "오늘의 추천 기회를 모두 소진하였습니다.</br>내일 다시 부탁할 수 있습니다."
